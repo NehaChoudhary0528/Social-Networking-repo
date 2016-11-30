@@ -26,6 +26,9 @@ namespace alumniproject
                 return;
             }
             MyCode.JoinEvent(Request.QueryString["eid"], Session["userid"].ToString());
+
+            Response.Write("<script>alert('Congratulations, we'll be waiting for you ')</script>");
         }
+        
     }
 }

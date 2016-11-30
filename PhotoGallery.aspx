@@ -6,18 +6,17 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
+<body background="/images/backgroundimg.jpeg">
     <form id="form1" runat="server">
     <div>
-        
-        <asp:LinkButton ID="LinkButton3" runat="server"  PostBackUrl="~/profile.aspx" ForeColor="#fbf628" CssClass="h4">Back</asp:LinkButton>
+        <asp:Button ID="Button1" runat="server" Text="Back" PostBackUrl="~/profile.aspx"/>
         
         <asp:FormView ID="FormView1" AllowPaging="true" DataSourceID="SqlDataSource1" runat="server">
             <ItemTemplate>
                 <table style="text-align:center;width:1000px;background-color:aliceblue" >
                     <tr>
                         
-                        <td colspan="3" ><asp:Image id="image1" runat="server" ImageUrl='<%# "Handler.ashx?id="+Eval("photoid") %>' Width="800" Height="400" /></td>
+                        <td colspan="3" ><asp:Image id="image1" runat="server" ImageUrl='<%# "Handler.ashx?id="+Eval("photoid") %>' Width="400" Height="400" /></td>
                         
                     </tr>
                     <tr>
@@ -35,7 +34,7 @@
             </ItemTemplate>
         </asp:FormView>
         <asp:Panel ID="Panel1" Visible="false" runat="server">
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" >
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" ForeColor="Wheat" >
                 <Columns>
                     <asp:BoundField DataField="email" HeaderText="Liked By" />
                     <asp:TemplateField HeaderText="photo">

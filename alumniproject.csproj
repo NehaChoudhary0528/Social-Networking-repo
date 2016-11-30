@@ -73,16 +73,20 @@
     <Content Include="Global.asax" />
     <Content Include="home.aspx" />
     <Content Include="images\1.jpg" />
+    <Content Include="images\111.jpg" />
     <Content Include="images\2.jpg" />
+    <Content Include="images\222.jpg" />
     <Content Include="images\3.jpg" />
     <Content Include="images\arrows-white.png" />
     <Content Include="images\background.jpg" />
+    <Content Include="images\backgroundimg.jpeg" />
     <Content Include="images\bg.jpeg" />
     <Content Include="images\bullet.png" />
     <Content Include="images\calendar_icon.png" />
     <Content Include="images\default_thumb.jpg" />
     <Content Include="images\fb.png" />
     <Content Include="images\graphic.jpg" />
+    <Content Include="images\mess.jpeg" />
     <Content Include="images\pattern.png" />
     <Content Include="images\thumbs_background-main.jpg" />
     <Content Include="images\twitter.png" />
@@ -105,7 +109,10 @@
     <Content Include="profile.aspx" />
     <Content Include="StudentSignUp.aspx" />
     <Content Include="UserControls\MyCal.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="events_joined.aspx.cs">
@@ -209,6 +216,13 @@
     </Compile>
     <Compile Include="UserControls\MyCal.ascx.designer.cs">
       <DependentUpon>MyCal.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

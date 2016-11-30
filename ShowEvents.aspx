@@ -6,9 +6,10 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
+<body background="/images/backgroundimg.jpeg">
     <form id="form1" runat="server">
     <div>
+          <asp:Button ID="Button1" runat="server" Text="Back" PostBackUrl="~/profile.aspx" CssClass="btn-primary" />
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:myconstr %>" SelectCommand="SELECT * FROM [event]"></asp:SqlDataSource>
         <asp:DataList ID="DataList1" runat="server" RepeatColumns="3" DataKeyField="Id" DataSourceID="SqlDataSource1">
             <ItemTemplate>
@@ -18,28 +19,29 @@
                     launchedby:
                 <asp:Label ID="launchedbyLabel" runat="server" Text='<%# Eval("launchedby") %>' />
                 <br />
-                ename:
+                Event Name:
                 <asp:Label ID="enameLabel" runat="server" Text='<%# Eval("ename") %>' />
                 <br />
-                edate:
+                Event Date:
                 <asp:Label ID="edateLabel" runat="server" Text='<%# Eval("edate") %>' />
                 <br />
-                description:
+                Description:
                 <asp:Label ID="descriptionLabel" runat="server" Text='<%# Eval("description") %>' />
                 <br />
-                contact:
+                Contact:
                 <asp:Label ID="contactLabel" runat="server" Text='<%# Eval("contact") %>' />
                 <br />
                 
-                venue:
+                Venue:
                 <asp:Label ID="venueLabel" runat="server" Text='<%# Eval("venue") %>' />
                 <br />
-                etime:
+                Event Timings:
                 <asp:Label ID="etimeLabel" runat="server" Text='<%# Eval("etime") %>' />
                 <br />
                    
-                    <asp:LinkButton ID="joinlink" runat="server" OnClick="joinlink_Click" PostBackUrl='<%# "~/ShowEvents.aspx?eid="+Eval("Id") %>' ><%# alumniproject.MyCode.getEventJoinStatus(Eval("Id").ToString(),Session["userid"].ToString())==true?"":"Join Event" %></asp:LinkButton>
-                    </div>
+                    <asp:LinkButton ID="joinlink" runat="server" OnClick="joinlink_Click" PostBackUrl='<%# "~/ShowEvents.aspx?eid="+Eval("Id") %>' ><%# alumniproject.MyCode.getEventJoinStatus(Eval("Id").ToString(),Session["userid"].ToString())==true?"":"Join Event"%></asp:LinkButton>
+                <script>alert('Congratulations, we'll be waiting for you')</script>  
+                </div>
             </ItemTemplate>
         </asp:DataList>
     </div>

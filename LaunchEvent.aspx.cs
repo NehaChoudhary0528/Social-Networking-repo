@@ -27,16 +27,17 @@ namespace alumniproject
             row["ename"] = txtename.Text;
             row["edate"] = edate1.SelectedDate;
             row["description"] = txtDesc.Text;
-            row["etime"] = txtTime.Text;
             row["contact"] = TxtContact.Text;
             row["launchedby"] = Session["userid"].ToString();
             row["venue"] = txtVenue.Text;
+            row["etime"] = txtTime.Text;
 
             ds.Tables[0].Rows.Add(row);
 
             da.Update(ds, "event");
 
-            Response.Write("event registered successfully");
+            Response.Write("<script>alert('Event Launched successfully')</script>");
+
 
         }
     }

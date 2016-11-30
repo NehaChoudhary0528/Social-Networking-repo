@@ -26,19 +26,20 @@ namespace alumniproject
 
             DataRow row = ds.Tables[0].NewRow();
             row["Name"] = TextBox1.Text;
-            row["email"] = TextBox2.Text;
-            row["dob"] = mycal1.SelectedDate;
-            row["passing_year"] = pop_upcalender1.SelectedDate;
+
+            //row["dob"] = datepicker.Text;
+            //row["passing_year"] = pop_upcalender1.SelectedDate;
             row["qualification"] = DropDownList1.SelectedItem.ToString() ;
             row["country"] = DropDownList3.SelectedItem.ToString();
             row["contact"] = TextBox4.Text.ToString();
             row["branch"] = DropDownList2.SelectedItem.ToString();
             row["address"] = TextBox8.Text;
+            row["email"] = TextBox2.Text;
             row["password"] = TextBox9.Text;
 
 
-
-            if (RadioButton1.Checked == true)
+            var check = (RadioButton1.Checked == true && RadioButton2.Checked == false);
+            if (check==true)
                 row["gender"] = "M";
             else
                 row["gender"] = "F";
@@ -47,13 +48,14 @@ namespace alumniproject
 
             da.Update(ds, "userinfo");
 
-            Response.Write("User registered successfully");
+            Response.Write("<script>alert('Registered successfully, Click Login to proceed')</script>");
 
 
-           
-            
+
+
+
         }
 
-       
+
     }
 }
